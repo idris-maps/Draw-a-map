@@ -20,12 +20,23 @@ td {
 	background-color: white;
 	color: darkgray;
 }
+/* -- */
 
 #indexImgDiv {
 	width: 100%;
 	text-align: center;
 }
-
+#indexImg {
+	width: 80%;
+}
+@media screen and (min-width: 980px) {
+	#indexImg {
+		width: 60%;
+	}
+}
+#logo {
+	width: 90%;
+}
 
 
 .s {
@@ -63,3 +74,5 @@ td {
 hr {
 	color: lightgray
 }
+
+

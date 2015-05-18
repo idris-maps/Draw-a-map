@@ -102,11 +102,12 @@ exports.index =
 
 exports.draw = 
 	'<div class="row">' +
-		'<div class="col-md-3">' +
+		'<div class="col-md-3 col-sm-5 col-xs-12">' +
+			'<img id="logo" src="/img/site/treasuremap.png" />' +
 			'<div id="menu"></div>' +
 			'<br/><br/>' +
 		'</div>' +
-		'<div class="col-md-9">' +
+		'<div class="col-md-9 col-sm-7 col-xs-12">' +
 			'<div id="map"></div>' +
 		'</div>' +
 	'</div>';

@@ -429,9 +429,8 @@ exports.draw = function(lang) { console.log('page draw ' + lang)
 	fill();
 	function fill() {
 		$('#map').css('height', $(document).height() - 20);
-		$('#menu').css('height', $(document).height() - 20);
+		//$('#menu').css('height', $(document).height() - 20);
 		window.map = L.map('map');
-
 
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -822,11 +821,12 @@ exports.index =
 
 exports.draw = 
 	'<div class="row">' +
-		'<div class="col-md-3">' +
+		'<div class="col-md-3 col-sm-5 col-xs-12">' +
+			'<img id="logo" src="/img/site/treasuremap.png" />' +
 			'<div id="menu"></div>' +
 			'<br/><br/>' +
 		'</div>' +
-		'<div class="col-md-9">' +
+		'<div class="col-md-9 col-sm-7 col-xs-12">' +
 			'<div id="map"></div>' +
 		'</div>' +
 	'</div>';

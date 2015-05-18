@@ -38,9 +38,8 @@ exports.draw = function(lang) { console.log('page draw ' + lang)
 	fill();
 	function fill() {
 		$('#map').css('height', $(document).height() - 20);
-		$('#menu').css('height', $(document).height() - 20);
+		//$('#menu').css('height', $(document).height() - 20);
 		window.map = L.map('map');
-
 
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
