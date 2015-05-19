@@ -27,9 +27,11 @@
 					drawPoint: 'Click the map to add a point',
 					drawLine: 'Click the map to add a line',
 					drawPolygon: 'Click the map to add a polygon',
-					dlTitle: 'Download geojson file',
+					dlTitle: 'Export file',
 					dl: 'Download',
-					upTitle: 'Upload geojson file'
+					upTitle: 'Import',
+					gjFile: 'a geojson file',
+					csvFile: 'a csv file'
 				},
 				confirmPoint : {
 					nameText: 'Give this point a name',
@@ -105,9 +107,11 @@
 					drawPoint: 'Cliquez sur la carte pour ajouter un point',
 					drawLine: 'Cliquez sur la carte pour ajouter une ligne',
 					drawPolygon: 'Cliquez sur la carte pour ajouter un polygone',
-					dlTitle: 'Télécharger fichier geojson',
+					dlTitle: 'Exporter',
 					dl: 'Télécharger',
-					upTitle: 'Charger un fichier geojson'
+					upTitle: 'Importer',
+					gjFile: 'un fichier geojson',
+					csvFile: 'un fichier csv'
 				},
 				confirmPoint : {
 					nameText: 'Nommez ce point',

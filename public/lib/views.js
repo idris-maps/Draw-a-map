@@ -37,7 +37,10 @@ exports.secUpload =
 	'<div id="upload" class="section">' + 
 		'<p id="uploadTitle" class="menuTitle"></p>' +
 		'<div id="uploadContent" class="secContent">' +
-			'<input id="uploadFile" type="file">' +
+			'<p id="geojsonFile"></p>' +
+			'<input id="uploadGeojson" type="file">' +
+			'<p id="csvFile"></p>' +
+			'<input id="uploadCsv" type="file">' +
 		'</div>' +
 	'</div>';
 

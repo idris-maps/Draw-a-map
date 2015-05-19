@@ -1,6 +1,7 @@
 var $ = require('browserify-zepto');
 var txt = require('./txt.json');
 var menu = require('./menu.js');
+var upload = require('./upload.js');
 
 exports.showHide = function() {
 	$('.section').on('click', function(e) {
@@ -82,32 +83,10 @@ exports.downloadJson = function(t) {
 
 exports.upload = function(t) {
 	$('#uploadTitle').append('<span id="uploadSign"> + </span>' + t.upTitle);
-	var fileInput = $('#uploadFile');
-	fileInput.on("change", uploadFile, false);
-	function uploadFile(e) {
-		var fileList = this.files;
-		var reader = new FileReader();
-		reader.onload = (function(tf) {
-			return function(e) { 
-				var coll = JSON.parse(e.target.result);
-				for(i=0;i<coll.features.length;i++) {
-					var feat = coll.features[i];
-					config.id = config.id + 1;
-					feat.properties.id = config.id;
-					if(feat.properties.name == undefined) {
-						feat.properties.name = 'no name';
-					}
-					if(feat.properties.style == undefined) {
-						feat.properties.style = {};
-					}
-					if(feat.properties.style.color == undefined) {
-						feat.properties.style.color = 'Blue';
-					}
-					config.features.push(feat);
-				}			
-			}
-		})(fileList[0]);
-		reader.readAsText(fileList[0]);
-		reader.onloadend = function() { menu.index(); }
-	}
+	$('#geojsonFile').text(t.gjFile);
+	$('#csvFile').text(t.csvFile);
+	var geojsonInput = $('#uploadGeojson');
+	geojsonInput.on("change", upload.geojson, false);
+	var csvInput = $('#uploadCsv');
+	csvInput.on("change", upload.csv, false);
 }
