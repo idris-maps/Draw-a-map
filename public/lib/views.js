@@ -93,20 +93,27 @@ exports.menuChangeStyle =
 	'<button id="cancel" class="btn btn-red marginLeft"></button>';
 
 exports.index = 
-	'<h1 id="title"></h1>' +
-	'<div id="indexImgDiv">' +
-		'<img id="indexImg" src="/img/site/treasuremap.png" />' +
-		'<br/><br/><br/>' +
-		'<a id="link">' +
-			'<button id="btn" class="btn btn-red"></button>' +
-		'</a>' +
+	'<div class="row">' +
+		'<div class="col-md-6">' +
+			'<h2 id="title"></h2>' +
+		'</div>' +
+		'<div class="col-md-6" style="text-align:right">' +
+			'<a id="langLink"><button id="lang" class="btn btn-red"></button></a>' +
+		'</div>' +
+		'<div id="indexImgDiv">' +
+			'<img id="indexImg" src="/img/site/treasuremap.png" />' +
+			'<br/><br/><br/>' +
+			'<a id="link">' +
+				'<button id="btn" class="btn btn-red"></button>' +
+			'</a>' +
+		'</div>' +
 	'</div>';
 
 
 exports.draw = 
 	'<div class="row">' +
 		'<div class="col-md-3 col-sm-5 col-xs-12">' +
-			'<img id="logo" src="/img/site/treasuremap.png" />' +
+			'<a id="linkIndex"><img id="logo" src="/img/site/treasuremap.png" /></a>' +
 			'<div id="menu"></div>' +
 			'<br/><br/>' +
 		'</div>' +

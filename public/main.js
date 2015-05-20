@@ -1,13 +1,6 @@
 var $ = require('browserify-zepto');
 var director = require('director');
 
-
-
-
-
-
-
-
 $(document).ready(function() {
 	window.config = {
 		mode: 'idle',

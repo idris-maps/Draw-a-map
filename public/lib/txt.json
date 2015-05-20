@@ -11,7 +11,9 @@
 		index: {
 			title: 'Draw a map',
 			start: 'Start',
-			linkStart: '#/en/draw'
+			linkStart: '#/en/draw',
+			opLang: 'Français',
+			opLink: '#/fr'
 		},
 		draw: {
 			menu: {
@@ -90,8 +92,10 @@
 		],
 		index: {
 			title: 'Dessinez une carte',
-			start: 'Commencez',
-			linkStart: '#/fr/draw'
+			start: 'Dessiner',
+			linkStart: '#/fr/draw',
+			opLang: 'English',
+			opLink: '#/en'
 		},
 		draw: {
 			menu: {

@@ -19,6 +19,8 @@ exports.index = function(lang) { console.log('page index ' + lang)
 	fill(); 
 	function fill() {
 		$('#title').text(t.title)
+		$('#lang').text(t.opLang)
+		$('#langLink').attr('href', t.opLink)
 		$('#btn').text(t.start)
 		$('#link').attr('href', t.linkStart)
 	}
@@ -37,13 +39,16 @@ exports.draw = function(lang) { console.log('page draw ' + lang)
 	$('#content').append(view.draw); 
 	fill();
 	function fill() {
+		$('#linkIndex').attr('href', '#/' + config.lang)
 		$('#map').css('height', $(document).height() - 20);
 		window.map = L.map('map');
-/*
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+
+		L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			opacity: 0.5,
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
-*/
+
 		map.setView([37, 15], 3);
 		menu.index();
 	}

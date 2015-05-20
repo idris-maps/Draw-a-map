@@ -410,6 +410,8 @@ exports.index = function(lang) { console.log('page index ' + lang)
 	fill(); 
 	function fill() {
 		$('#title').text(t.title)
+		$('#lang').text(t.opLang)
+		$('#langLink').attr('href', t.opLink)
 		$('#btn').text(t.start)
 		$('#link').attr('href', t.linkStart)
 	}
@@ -428,13 +430,16 @@ exports.draw = function(lang) { console.log('page draw ' + lang)
 	$('#content').append(view.draw); 
 	fill();
 	function fill() {
+		$('#linkIndex').attr('href', '#/' + config.lang)
 		$('#map').css('height', $(document).height() - 20);
 		window.map = L.map('map');
-/*
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+
+		L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			opacity: 0.5,
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
-*/
+
 		map.setView([37, 15], 3);
 		menu.index();
 	}
@@ -548,7 +553,9 @@ module.exports={
 		index: {
 			title: 'Draw a map',
 			start: 'Start',
-			linkStart: '#/en/draw'
+			linkStart: '#/en/draw',
+			opLang: 'Français',
+			opLink: '#/fr'
 		},
 		draw: {
 			menu: {
@@ -627,8 +634,10 @@ module.exports={
 		],
 		index: {
 			title: 'Dessinez une carte',
-			start: 'Commencez',
-			linkStart: '#/fr/draw'
+			start: 'Dessiner',
+			linkStart: '#/fr/draw',
+			opLang: 'English',
+			opLink: '#/en'
 		},
 		draw: {
 			menu: {
@@ -869,20 +878,27 @@ exports.menuChangeStyle =
 	'<button id="cancel" class="btn btn-red marginLeft"></button>';
 
 exports.index = 
-	'<h1 id="title"></h1>' +
-	'<div id="indexImgDiv">' +
-		'<img id="indexImg" src="/img/site/treasuremap.png" />' +
-		'<br/><br/><br/>' +
-		'<a id="link">' +
-			'<button id="btn" class="btn btn-red"></button>' +
-		'</a>' +
+	'<div class="row">' +
+		'<div class="col-md-6">' +
+			'<h2 id="title"></h2>' +
+		'</div>' +
+		'<div class="col-md-6" style="text-align:right">' +
+			'<a id="langLink"><button id="lang" class="btn btn-red"></button></a>' +
+		'</div>' +
+		'<div id="indexImgDiv">' +
+			'<img id="indexImg" src="/img/site/treasuremap.png" />' +
+			'<br/><br/><br/>' +
+			'<a id="link">' +
+				'<button id="btn" class="btn btn-red"></button>' +
+			'</a>' +
+		'</div>' +
 	'</div>';
 
 
 exports.draw = 
 	'<div class="row">' +
 		'<div class="col-md-3 col-sm-5 col-xs-12">' +
-			'<img id="logo" src="/img/site/treasuremap.png" />' +
+			'<a id="linkIndex"><img id="logo" src="/img/site/treasuremap.png" /></a>' +
 			'<div id="menu"></div>' +
 			'<br/><br/>' +
 		'</div>' +
@@ -894,13 +910,6 @@ exports.draw =
 },{}],9:[function(require,module,exports){
 var $ = require('browserify-zepto');
 var director = require('director');
-
-
-
-
-
-
-
 
 $(document).ready(function() {
 	window.config = {
